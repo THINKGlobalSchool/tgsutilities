@@ -10,8 +10,8 @@
  */
 ?>
 
-/* Custom tgstheme classes */
-.tgstheme-chosen-select {
+/* Custom classes */
+.elgg-chosen-select {
 	padding-right: 10px;
 }
 

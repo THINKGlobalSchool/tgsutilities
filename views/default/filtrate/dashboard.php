@@ -39,16 +39,15 @@ if (!$disable_history) {
 $js = <<<JAVASCRIPT
 	<script type='text/javascript'>
 		require(['filtrate/Filtrate'], function (Filtrate) {
-			elgg.register_hook_handler('init', 'system', function(){
-				// Go go gadget filtrate
-				$('#$id').Filtrate({
-					defaultParams: $.param($.parseJSON('$default_params')),
-					ajaxListUrl: '$list_url',
-					enableInfinite: $infinite_scroll,
-					disableHistory: $disable_history,
-					context: '$context',
-					ignoreQueryString: $ignore_query_string
-				});
+			// Go go gadget filtrate
+			$('#$id').Filtrate({
+				defaultParams: $.param($.parseJSON('$default_params')),
+				ajaxListUrl: '$list_url',
+				enableInfinite: $infinite_scroll,
+				disableHistory: $disable_history,
+				context: '$context',
+				ignoreQueryString: $ignore_query_string,
+				chosenInit: elgg.tgsutilities.global.defaultChosenInit
 			});
 		});
 	</script>

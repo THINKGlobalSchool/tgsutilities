@@ -46,22 +46,6 @@ define(['jquery', 'elgg'], function ($, elgg) {
 		}
 
 		/**
-		 * Chosen interrupt hook
-		 */
-		this.chosenInterrupt = function(hook, type, params, options) {
-			// If element is in the hidden advanced dashboard menu, short circuit the chosen init
-			// we'll need to init these later
-			$element = $('#' + params.id);
-			if ($element.closest('.filtrate-menu-advanced').length) {
-				// Register the handler to init the inputs later
-				registerElggHook('late_init', 'chosen.js', self.lateChosenInit);
-				return function(){};
-			}
-
-			return options;
-		}
-
-		/**
 		 * Perform extra tasks for elements populated by popstate
 		 */
 		this.valuePopulatedHandler = function(hook, type, params, value) {
@@ -556,7 +540,6 @@ define(['jquery', 'elgg'], function ($, elgg) {
 
 		// Chosen hooks
 		registerElggHook('change', 'chosen.js', this.handleChange);
-		registerElggHook('init', 'chosen.js', this.chosenInterrupt);
 
 		// Other hooks
 		registerElggHook('element_alt', 'filtrate', this.elementAltHandler);
@@ -572,6 +555,13 @@ define(['jquery', 'elgg'], function ($, elgg) {
 			if (options.enableInfinite) {
 				this.initInifiniteScroll();
 			}
+
+			// Set up chosen inputs
+			self.find('.filtrate-menu-container .elgg-chosen-select.filtrate-filter').each(function(idx) {
+				// Chosen change event may already be set up, remove it and re-apply
+				$(this).off('change');
+				options.chosenInit($(this));
+			});
 
 			// Set up autocompletes
 			self.find('.filtrate-menu-container input.elgg-input-autocomplete').each(function(idx) {

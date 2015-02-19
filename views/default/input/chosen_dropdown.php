@@ -21,7 +21,7 @@ if (!$vars['id']) {
 
 $id = $vars['id'];
 
-$vars['class'] = $vars['class'] . " tgstheme-chosen-select";
+$vars['class'] = $vars['class'] . " elgg-chosen-select";
 
 echo elgg_view('input/dropdown', $vars);
 
@@ -60,7 +60,6 @@ echo <<<JAVASCRIPT
 				// Init chosen dropdown
 				elgg.trigger_hook('init', 'chosen.js', {'id' : "$id"}, elgg.tgsutilities.global.defaultChosenInit).call(undefined, element);
 			});
-
 		});
 	</script>
 JAVASCRIPT;

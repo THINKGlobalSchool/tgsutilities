@@ -51,7 +51,7 @@ elgg.tgsutilities.global.defaultChosenInit = function(element) {
 }
 
 /**
- * Chosen setup handler for todo dashboard inputs
+ * Chosen setup handler for activity dashboard inputs
  */
 elgg.tgsutilities.global.setupActivityInputs = function (hook, type, params, options) {
 	
