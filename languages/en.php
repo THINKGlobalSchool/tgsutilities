@@ -19,4 +19,7 @@ return array(
 	'filtrate:label:sortdescarrow' => 'Descending ▼',
 	'filtrate:title:dashboard' => 'Some title',
 	'filtrate:error:content' => 'There was an error loading content',
+
+	// Owner block
+	'tgsutilities:label:browsecontent' => 'Browse Content',
 );

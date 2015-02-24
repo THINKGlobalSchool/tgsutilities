@@ -16,7 +16,16 @@ elgg.provide('elgg.tgsutilities.global');
 
 // Init
 elgg.tgsutilities.global.init = function() {
-	//
+	// Collapsable owner block menu delegate
+	$(document).on('click', 'a.ownerblock-browse-content-closed, a.ownerblock-browse-content-open', elgg.tgsutilities.global.ownerblockShowMoreClick);
+}
+
+// Click handler for show more
+elgg.tgsutilities.global.ownerblockShowMoreClick = function(event) {
+	// Toggle more button off
+	$(this).toggleClass('ownerblock-browse-content-closed').toggleClass('ownerblock-browse-content-open');
+	$('#tgsutilities-collapsable-ownerblock-full').slideToggle();
+	event.preventDefault();
 }
 
 /**
@@ -57,7 +66,7 @@ elgg.tgsutilities.global.setupActivityInputs = function (hook, type, params, opt
 	
 	// Set up the activity type filter
 	if (params.id == "activity-type-filter") {
-		//options.placeholder_text_multiple = 'hisadasd';
+		//options.placeholder_text_multiple = 'test';
 	}
 
 	// // Disable search for these inputs

@@ -8,7 +8,7 @@
  * @copyright THINK Global School 2010 - 2015
  * @link http://www.thinkglobalschool.org/
  *
- * PROVIDES:
+ * PROVIDED LIBRARIES:
  *  - Filtrate (in house filtering/sorting UI)
  *  - Chosen - Better select inputs
  *  - Tiptip - tooltips
@@ -16,6 +16,9 @@
  *  - fullcalendar - full calendar
  *  - datatables - smart, sortable tables
  *  - daterangepicker - a jquery daterange picker
+ *
+ * PROVIDED FEATURES:
+ *  - Custom Owner Block
  */
 
 elgg_register_event_handler('init', 'system', 'tgsutilities_init');
@@ -24,6 +27,8 @@ elgg_register_event_handler('init', 'system', 'tgsutilities_init');
  * Init event handler
  */
 function tgsutilities_init() {
+	/** TGS Utilities CSS **/
+	elgg_extend_view('css/elgg', 'css/tgsutilities/css');
 
 	/** Filtrate **/
 	elgg_extend_view('css/elgg', 'css/filtrate/filtrate');
