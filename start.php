@@ -19,6 +19,7 @@
  *
  * PROVIDED FEATURES:
  *  - Custom Owner Block
+ *  - Topbar dropdowns
  */
 
 elgg_register_event_handler('init', 'system', 'tgsutilities_init');
