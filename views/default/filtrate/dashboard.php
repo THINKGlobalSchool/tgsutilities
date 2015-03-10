@@ -40,7 +40,7 @@ $js = <<<JAVASCRIPT
 	<script type='text/javascript'>
 		require(['filtrate/Filtrate'], function (Filtrate) {
 			// Go go gadget filtrate
-			$('#$id').Filtrate({
+			$('#$id').data('filtrate', $('#$id').Filtrate({
 				defaultParams: $.param($.parseJSON('$default_params')),
 				ajaxListUrl: '$list_url',
 				enableInfinite: $infinite_scroll,
@@ -48,7 +48,7 @@ $js = <<<JAVASCRIPT
 				context: '$context',
 				ignoreQueryString: $ignore_query_string,
 				chosenInit: elgg.tgsutilities.global.defaultChosenInit
-			});
+			}));
 		});
 	</script>
 JAVASCRIPT;

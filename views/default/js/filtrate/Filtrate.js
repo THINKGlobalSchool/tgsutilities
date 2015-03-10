@@ -7,7 +7,7 @@
  * @copyright THINK Global School 2010 - 2015
  * @link http://www.thinkglobalschool.org/
  */
-
+elgg.provide('elgg.filtrate');
 define(['jquery', 'elgg'], function ($, elgg) {
 	var Filtrate = $.fn.Filtrate = function(options) {
 		var self = this,
@@ -21,7 +21,8 @@ define(['jquery', 'elgg'], function ($, elgg) {
 			ignoreQueryString: false,
 			enableInfinite: false,
 			disableHistory: false,
-			context: null
+			context: null,
+			chosenInit: elgg.tgsutilities.global.defaultChosenInit
 		}
 
 		// Merge options
@@ -40,7 +41,7 @@ define(['jquery', 'elgg'], function ($, elgg) {
 					$(this).data('chosen_enabled', true);
 
 					// Use the default chosen init function, need it's magic
-					elgg.tgsutilities.global.defaultChosenInit($(this));
+					options.chosenInit($(this));
 				}
 			});
 		}
