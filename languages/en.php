@@ -22,4 +22,7 @@ return array(
 
 	// Owner block
 	'tgsutilities:label:browsecontent' => 'Browse Content',
+
+	// Action menu
+	'tgsutilities:label:actions' => 'Actions',
 );
