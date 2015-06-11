@@ -80,6 +80,10 @@ function tgsutilities_init() {
 	elgg_register_css('fontawesome', $f);
 	elgg_load_css('fontawesome');
 
+	// Register datepicker JS
+	$f = elgg_get_site_url(). 'mod/tgsutilities/vendors/daterangepicker/daterangepicker.jQuery.js';
+	elgg_register_js('jquery.daterangepicker', $f);
+
 	// Register datepicker css
 	$f = elgg_get_site_url(). 'mod/tgsutilities/vendors/daterangepicker/ui.daterangepicker.css';
 	elgg_register_css('jquery.daterangepicker', $f);
