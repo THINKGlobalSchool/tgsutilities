@@ -32,6 +32,8 @@ function tgsutilities_init() {
 	/** TGS Utilities CSS **/
 	elgg_extend_view('css/elgg', 'css/tgsutilities/css');
 
+	elgg_extend_view('css/admin', 'css/tgsutilities/css');
+
 	/** Filtrate **/
 	elgg_extend_view('css/elgg', 'css/filtrate/filtrate');
 	elgg_register_external_view('js/filtrate/Filtrate.js', TRUE);
