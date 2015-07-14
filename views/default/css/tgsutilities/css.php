@@ -22,11 +22,24 @@
 
 #tgsutilities-collapsable-ownerblock-full .elgg-menu-owner-block li a {}
 
-.ownerblock-browse-content-closed, .ownerblock-browse-content-open {}
+.ownerblock-browse-content-closed, .ownerblock-browse-content-open {
+	padding: 2px 4px 2px 8px;
+    display: block;
+    color: #91131E;
+	margin-top: -2px;
+	font-family: 'Shanti',sans-serif;
+	text-transform: uppercase;
+}
 
-.ownerblock-browse-content-open {}
+.ownerblock-browse-content-open {
+	border-bottom: 1px dotted #BBB;
+}
 
-.ownerblock-browse-content-closed:hover, .ownerblock-browse-content-open:hover {}
+.ownerblock-browse-content-closed:hover, .ownerblock-browse-content-open:hover {
+	color: #FFFFFF;
+	background: #2D3F46;
+	text-decoration: none;
+}
 
 .ownerblock-browse-content-closed:after {
 	font-size: smaller;
@@ -37,6 +50,7 @@
 	font-size: smaller;
 	content: " \25B2";
 }
+
 
 #tgsutilities-collapsable-ownerblock ul li.elgg-menu-item-more-ownerblock,
 #tgsutilities-collapsable-ownerblock ul li.elgg-menu-item-less-ownerblock {
@@ -216,7 +230,6 @@
 
 .elgg-menu-topbar-default li ul > li > a {
 	text-decoration: none;
-	padding: 10px 20px;
 	background-color: #FFF;
 	color: #444;
 }
