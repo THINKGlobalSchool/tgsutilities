@@ -1,6 +1,7 @@
 define(function(require) {
 	var elgg = require('elgg');
 	var $ = require('jquery');
+	var CKEDITOR = require('ckeditor');
 
 	// Add extra plugins
 	CKEDITOR.plugins.addExternal('onchange', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/onchange.js', '');
