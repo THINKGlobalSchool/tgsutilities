@@ -7,14 +7,16 @@ define(function(require) {
 	CKEDITOR.plugins.addExternal('onchange', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/onchange.js', '');
 	CKEDITOR.plugins.addExternal('justify', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/justify/plugin.js', '');
 	CKEDITOR.plugins.addExternal('font', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/font/plugin.js', '');
+	CKEDITOR.plugins.addExternal('panelbutton', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/panelbutton/plugin.js', '');
+	CKEDITOR.plugins.addExternal('colorbutton', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/colorbutton/plugin.js', '');
 
 	return {
-		toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'PasteFromWord', 'Maximize'], ['Format', 'FontSize']],
+		toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'PasteFromWord', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
 		removeButtons: 'Subscript,Superscript', // To have Underline back
 		allowedContent: true,
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'contextmenu,tabletools,resize',
-		extraPlugins: 'blockimagepaste,onchange,justify,font',
+		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
 		skin: 'moono',
