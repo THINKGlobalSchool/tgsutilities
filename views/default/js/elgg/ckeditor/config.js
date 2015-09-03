@@ -9,6 +9,7 @@ define(function(require) {
 	CKEDITOR.plugins.addExternal('font', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/font/plugin.js', '');
 	CKEDITOR.plugins.addExternal('panelbutton', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/panelbutton/plugin.js', '');
 	CKEDITOR.plugins.addExternal('colorbutton', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/colorbutton/plugin.js', '');
+	CKEDITOR.plugins.addExternal('indentblock', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/indentblock/plugin.js', '');
 
 	return {
 		toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'PasteFromWord', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
@@ -16,7 +17,7 @@ define(function(require) {
 		allowedContent: true,
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'contextmenu,tabletools,resize',
-		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton',
+		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
 		skin: 'moono',
@@ -25,6 +26,7 @@ define(function(require) {
 		disableNativeSpellChecker: false,
 		disableNativeTableHandles: false,
 		removeDialogTabs: 'image:advanced;image:Link;link:advanced;link:target',
-		autoGrow_maxHeight: $(window).height() - 100
+		autoGrow_maxHeight: $(window).height() - 100,
+		startupFocus: true
 	};
 });
