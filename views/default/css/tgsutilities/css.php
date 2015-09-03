@@ -255,7 +255,7 @@
     -moz-column-gap: 1px; 
     column-gap: 1px;
 
-    -webkit-column-rule: 1px inset #888;
+    -webkit-column-rule: 1px outset #bbb;
     -moz-column-rule: 1px inset #888;
     column-rule: 1px inset #888;
 }
