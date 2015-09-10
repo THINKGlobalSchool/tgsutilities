@@ -18,6 +18,7 @@ define(function(require) {
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'tabletools,resize',
 		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock',
+		extraAllowedContent: 'table td th tr',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
 		skin: 'moono',
