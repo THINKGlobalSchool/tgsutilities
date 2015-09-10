@@ -14,9 +14,9 @@ define(function(require) {
 	return {
 		toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'PasteFromWord', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
 		removeButtons: 'Subscript,Superscript', // To have Underline back
-		allowedContent: true,
+		//allowedContent: true,
 		baseHref: elgg.config.wwwroot,
-		removePlugins: 'contextmenu,tabletools,resize',
+		removePlugins: 'tabletools,resize',
 		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
