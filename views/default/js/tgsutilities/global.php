@@ -102,6 +102,75 @@ elgg.tgsutilities.global.filtrateLoaded = function(hook, type, params, options) 
 	}
 }
 
+/**
+ * Initialize the date picker
+ *
+ * Uses the class .elgg-input-date as the selector.
+ *
+ * If the class .elgg-input-timestamp is set on the input element, the onSelect
+ * method converts the date text to a unix timestamp in seconds. That value is
+ * stored in a hidden element indicated by the id on the input field.
+ *
+ * @return void
+ * @requires jqueryui.datepicker
+ */
+elgg.tgsutilities.global.initDateTimePicker = function() {
+	function loadDatePicker() {
+		var $format = $('.elgg-input-date-time').attr('data-timeformat');
+		var minDate = $('.elgg-input-date-time').attr('data-minDate');
+		var maxDate = $('.elgg-input-date-time').attr('data-maxDate');
+
+		var options = {
+			// ISO-8601
+			dateFormat: 'yy-mm-dd',
+			timeFormat: $format, // Supply the dateformat to change which time fields are available
+			controlType: 'select',
+			oneLine: true,
+			onSelect: function(dateText) {
+				if ($(this).is('.elgg-input-timestamp')) {
+					// convert to unix timestamp
+					var dateParts = dateText.split("-");
+					var timestamp = Date.UTC(dateParts[0], dateParts[1] - 1, dateParts[2]);
+					timestamp = timestamp / 1000;
+
+					var id = $(this).attr('id');
+					$('input[name="' + id + '"]').val(timestamp);
+				}
+			}
+		}
+
+		if (maxDate !== null) {
+			options.maxDate = maxDate;
+		}
+
+		if (minDate !== null) {
+			options.minDate = minDate;
+		}
+
+		$('.elgg-input-date-time').datetimepicker(options);
+	}
+
+	if (!$('.elgg-input-date-time').length) {
+		return;
+	}
+
+	if (elgg.get_language() == 'en') {
+		loadDatePicker();
+	} else {
+		// load language first
+		elgg.get({
+			url: elgg.config.wwwroot + 'vendors/jquery/i18n/jquery.ui.datepicker-'+ elgg.get_language() +'.js',
+			dataType: "script",
+			cache: true,
+			success: loadDatePicker,
+			error: loadDatePicker // english language is already loaded.
+		});
+	}
+};
+
+require(['jquery-ui-timepicker-addon'], function() {
+	elgg.register_hook_handler('init', 'system', elgg.tgsutilities.global.initDateTimePicker);
+});
 elgg.register_hook_handler('init', 'system', elgg.tgsutilities.global.init);
 elgg.register_hook_handler('getOptions', 'chosen.js', elgg.tgsutilities.global.setupActivityInputs);
 elgg.register_hook_handler('content_loaded', 'filtrate', elgg.tgsutilities.global.filtrateLoaded);

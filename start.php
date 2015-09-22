@@ -82,14 +82,21 @@ function tgsutilities_init() {
 	elgg_register_css('fontawesome', $f);
 	elgg_load_css('fontawesome');
 
-	// Register datepicker JS
+	// Register daterangepicker JS
 	$f = elgg_get_site_url(). 'mod/tgsutilities/vendors/daterangepicker/daterangepicker.jQuery.js';
 	elgg_register_js('jquery.daterangepicker', $f);
 
-	// Register datepicker css
+	// Register daterangepicker css
 	$f = elgg_get_site_url(). 'mod/tgsutilities/vendors/daterangepicker/ui.daterangepicker.css';
 	elgg_register_css('jquery.daterangepicker', $f);
 
+	// Register datetime JS
+	//elgg_register_js('jquery-ui-timepicker-addon', '/mod/tgsutilities/vendors/timepicker/jquery-ui-timepicker-addon.js', 'head');
+
+	// Register datetime CSS
+	$f = elgg_get_simplecache_url('css', 'timepicker/jquery-ui-timepicker-addon.css');
+   	elgg_register_css('jquery-ui-timepicker-addon', $f);
+   	elgg_load_css('jquery-ui-timepicker-addon');
 
 	/** Action Menu Hook Handler **/
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'tgsutilities_action_menu_handler', 9999);
