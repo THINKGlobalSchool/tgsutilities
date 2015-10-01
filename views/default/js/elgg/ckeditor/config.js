@@ -10,6 +10,7 @@ define(function(require) {
 	CKEDITOR.plugins.addExternal('panelbutton', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/panelbutton/plugin.js', '');
 	CKEDITOR.plugins.addExternal('colorbutton', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/colorbutton/plugin.js', '');
 	CKEDITOR.plugins.addExternal('indentblock', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/indentblock/plugin.js', '');
+	CKEDITOR.plugins.addExternal('dragresize', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/dragresize/plugin.js', '');
 
 	return {
 		toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
@@ -17,7 +18,7 @@ define(function(require) {
 		//allowedContent: true,
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'tabletools,resize',
-		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock',
+		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock,dragresize',
 		extraAllowedContent: 'table td th tr',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
