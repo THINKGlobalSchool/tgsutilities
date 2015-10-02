@@ -13,8 +13,30 @@ define(function(require) {
 	CKEDITOR.plugins.addExternal('dragresize', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/dragresize/plugin.js', '');
 
 	return {
-		toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
-		removeButtons: 'Subscript,Superscript', // To have Underline back
+		//toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
+		
+		// Going to use a subtractive pattern here for toolbar items. This allows us to modify it later! (via 'init', 'ckeditor' plugin hook)
+		removeButtons: 'Subscript,Superscript,About,Cut,Anchor,Scayt,Copy,PasteFromWord,PasteText,Table,HorizontalRule,SpecialChar,Styles,Font,JustifyBlock', 
+		
+		// Define toolbar groups
+		toolbarGroups: [
+			{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+			{ name: 'paragraph',   groups: [ 'align', 'indent', 'blocks', 'bidi' ] },
+		    { name: 'clipboard',   groups: [ 'list', 'undo', 'clipboard'] },
+		    { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+		    { name: 'forms' }, 
+		    { name: 'links' },
+		    { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
+		    { name: 'tools' },
+		    '/',
+		    { name: 'styles' },
+		    { name: 'colors' },
+		    { name: 'others' },
+		    { name: 'about' },
+		    { name: 'insert' },
+		    { name: 'custom' }
+		],
+
 		//allowedContent: true,
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'tabletools,resize',
