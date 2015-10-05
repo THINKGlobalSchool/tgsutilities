@@ -101,7 +101,9 @@ function tgsutilities_init() {
 	/** Action Menu Hook Handler **/
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'tgsutilities_action_menu_handler', 9999);
 
-	
+	/** CKEditor menu hook **/
+	elgg_register_plugin_hook_handler('register', 'menu:longtext', 'tgsutilities_ckeditor_longtext_menu');
+
 	return TRUE;
 }
 
@@ -179,4 +181,18 @@ function tgsutilities_action_menu_handler($hook, $type, $return, $params) {
 		$return[] = ElggMenuItem::factory($options);
 	}
 	return $return;
+}
+
+/**
+ * Modify the ckeditor menu
+ */
+function tgsutilities_ckeditor_longtext_menu($hook, $type, $items, $vars) {
+
+	foreach ($items as $idx => $item) {
+		if ($item->getName() == "ckeditor_toggler") {
+			unset($items[$idx]);
+		}
+	}
+
+	return $items;
 }
