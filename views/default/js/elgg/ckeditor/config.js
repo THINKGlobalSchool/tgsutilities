@@ -16,7 +16,7 @@ define(function(require) {
 		//toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
 		
 		// Going to use a subtractive pattern here for toolbar items. This allows us to modify it later! (via 'init', 'ckeditor' plugin hook)
-		removeButtons: 'Subscript,Superscript,About,Cut,Anchor,Scayt,Copy,PasteFromWord,PasteText,Table,HorizontalRule,SpecialChar,Styles,Font,JustifyBlock', 
+		removeButtons: 'Subscript,Superscript,About,Cut,Anchor,Scayt,Copy,PasteFromWord,PasteText,Table,HorizontalRule,SpecialChar,Styles,Font,JustifyBlock,Image', 
 		
 		// Define toolbar groups
 		toolbarGroups: [
@@ -34,7 +34,11 @@ define(function(require) {
 		    { name: 'others' },
 		    { name: 'about' },
 		    { name: 'insert' },
-		    { name: 'custom' }
+		    { name: 'custom' },
+		    { name: 'custom1' },
+		    { name: 'custom2' },
+		    { name: 'custom3' }, 
+		    { name: 'custom4' }
 		],
 
 		//allowedContent: true,
