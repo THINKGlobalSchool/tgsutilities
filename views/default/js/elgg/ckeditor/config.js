@@ -16,7 +16,7 @@ define(function(require) {
 		//toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
 		
 		// Going to use a subtractive pattern here for toolbar items. This allows us to modify it later! (via 'init', 'ckeditor' plugin hook)
-		removeButtons: 'Subscript,Superscript,About,Cut,Anchor,Scayt,Copy,PasteFromWord,PasteText,Table,HorizontalRule,SpecialChar,Styles,Font,JustifyBlock,Image', 
+		removeButtons: 'Subscript,Superscript,About,Cut,Anchor,Scayt,Copy,Paste,PasteFromWord,PasteText,Table,HorizontalRule,SpecialChar,Styles,Font,JustifyBlock,Image', 
 		
 		// Define toolbar groups
 		toolbarGroups: [
@@ -45,7 +45,7 @@ define(function(require) {
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'tabletools,resize',
 		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock,dragresize',
-		extraAllowedContent: 'table td th tr',
+		extraAllowedContent: 'table td th tr img[src,alt,width,height]',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
 		skin: 'moono',
