@@ -45,7 +45,7 @@ define(function(require) {
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'tabletools,resize',
 		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock,dragresize',
-		extraAllowedContent: 'table td th tr img[src,alt,width,height]',
+		extraAllowedContent: 'table td th tr img[style,src,alt,width,height][style]{*}',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
 		skin: 'moono',
