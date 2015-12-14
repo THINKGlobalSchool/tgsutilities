@@ -11,6 +11,10 @@ define(function(require) {
 	CKEDITOR.plugins.addExternal('colorbutton', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/colorbutton/plugin.js', '');
 	CKEDITOR.plugins.addExternal('indentblock', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/indentblock/plugin.js', '');
 	CKEDITOR.plugins.addExternal('dragresize', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/dragresize/plugin.js', '');
+	CKEDITOR.plugins.addExternal('lineutils', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/lineutils/plugin.js', '');
+	CKEDITOR.plugins.addExternal('widget', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/widget/plugin.js', '');
+	CKEDITOR.plugins.addExternal('footnotes', elgg.get_site_url() + 'mod/tgsutilities/views/default/js/elgg/ckeditor/footnotes/plugin.js', '');
+
 
 	return {
 		//toolbar: [['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat'], ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'Indent', 'Outdent'],[ 'NumberedList', 'BulletedList', 'Undo', 'Redo', 'Link', 'Unlink', 'Image', 'Blockquote', 'Paste', 'Maximize'], ['Format', 'FontSize', 'TextColor', 'BGColor']],
@@ -25,7 +29,7 @@ define(function(require) {
 		    { name: 'clipboard',   groups: [ 'list', 'undo', 'clipboard'] },
 		    { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 		    { name: 'forms' }, 
-		    { name: 'links' },
+		    { name: 'links' },c
 		    { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
 		    { name: 'tools' },
 		    '/',
@@ -44,8 +48,8 @@ define(function(require) {
 		//allowedContent: true,
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'tabletools,resize',
-		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock,dragresize',
-		extraAllowedContent: 'table td th tr img[style,src,alt,width,height][style]{*}',
+		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock,dragresize,lineutils,widget,footnotes',
+		extraAllowedContent: 'table td th tr section img[style,src,alt,width,height][style]{*}',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
 		skin: 'moono',
