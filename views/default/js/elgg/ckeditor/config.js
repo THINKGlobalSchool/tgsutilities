@@ -29,7 +29,7 @@ define(function(require) {
 		    { name: 'clipboard',   groups: [ 'list', 'undo', 'clipboard'] },
 		    { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 		    { name: 'forms' }, 
-		    { name: 'links' },c
+		    { name: 'links' },
 		    { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
 		    { name: 'tools' },
 		    '/',
