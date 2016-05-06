@@ -48,7 +48,7 @@ define(function(require) {
 		//allowedContent: true,
 		baseHref: elgg.config.wwwroot,
 		removePlugins: 'tabletools,resize',
-		extraPlugins: 'blockimagepaste,onchange,justify,font,panelbutton,colorbutton,indentblock,dragresize,lineutils,widget,footnotes',
+		extraPlugins: 'blockimagepaste,justify,font,panelbutton,colorbutton,indentblock,dragresize,lineutils,widget,footnotes',
 		extraAllowedContent: 'table td th tr section img[style,src,alt,width,height][style]{*}',
 		defaultLanguage: 'en',
 		language: elgg.config.language,
